@@ -1,0 +1,15 @@
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0//EN"
+        "http://google-web-toolkit.googlecode.com/svn/releases/2.0/distro-source/core/src/gwt-module.dtd">
+<module>
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+
+    <define-property name="show.clear.settings.button" values="true,false"/>
+    <set-property name="show.clear.settings.button" value="false"/>
+
+    <entry-point class='ru.gootsite.client.MailsEntryPoint'/>
+
+    <!-- (GWT) Классы из этого пакета будут скомпилированы в js -->
+    <source path='client'/>
+
+</module>

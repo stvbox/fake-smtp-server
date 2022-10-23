@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0"
+         metadata-complete="true">
+
+    <display-name>Fake smtp server</display-name>
+    <description>
+        Фэйковый smtp сервер для стендов разработки. Вэб приложение на сервлетах.
+    </description>
+
+    <request-character-encoding>UTF-8</request-character-encoding>
+
+    <!-- spring boot прибивает этот дескриптор
+    <welcome-file-list>
+        <welcome-file>Mails.html</welcome-file>
+    </welcome-file-list>
+    -->
+
+    <servlet>
+        <servlet-name>MailsService</servlet-name>
+        <servlet-class>ru.gootsite.server.MailsServiceImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MailsService</servlet-name>
+        <url-pattern>/ru.gootsite.Mails/stub-mails</url-pattern>
+    </servlet-mapping>
+
+</web-app>
