@@ -10,4 +10,5 @@ public class MailDTO implements Serializable {
     public String subject;
     public String body;
     public String headers;
+    public String url;
 }

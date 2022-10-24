@@ -52,11 +52,19 @@ public class MailsEntryPoint implements EntryPoint {
             }
         };
 
+        TextColumn<MailDTO> urlColumn = new TextColumn<MailDTO>() {
+            @Override
+            public String getValue(MailDTO mail) {
+                return mail.url;
+            }
+        };
+
         // Add the columns.
         table.addColumn(dateColumn, "Date");
         table.addColumn(nameColumn, "Subject");
         table.addColumn(addressColumn, "Body");
         table.addColumn(headersColumn, "Headers");
+        table.addColumn(urlColumn, "Url");
 
         // Add it to the root panel.
         RootPanel.get().add(table);
