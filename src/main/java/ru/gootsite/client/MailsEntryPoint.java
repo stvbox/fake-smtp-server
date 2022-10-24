@@ -1,7 +1,9 @@
 package ru.gootsite.client;
 
+import com.google.gwt.cell.client.Cell;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -55,9 +57,16 @@ public class MailsEntryPoint implements EntryPoint {
         TextColumn<MailDTO> urlColumn = new TextColumn<MailDTO>() {
             @Override
             public String getValue(MailDTO mail) {
-                return mail.url;
+                return "";
+            }
+
+            @Override
+            public void render(Cell.Context context, MailDTO mail, SafeHtmlBuilder sb) {
+                super.render(context, mail, sb);
+                sb.appendHtmlConstant("<a href=\"" + mail.url + "\">скачать</a>");
             }
         };
+
 
         // Add the columns.
         table.addColumn(dateColumn, "Date");
